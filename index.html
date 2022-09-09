@@ -20,7 +20,7 @@
         </nav>
         <div class="jumbotron">
             <h1>The Truth Is Out There</h1>
-          </div>
+        </div>
           <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4">
@@ -34,21 +34,19 @@
                         Not everyone is ready to celebrate, however. Local CEO and vocal anti-alien activist V. Isualize reached out to our reporters to go on record as firmly opposed to any attempts to provide access to this data. "If there are aliens, they certainly would like to be left alone," she stated, before directing us to the Leave Aliens Alone (LAA) community engagement initiative she founded and funds.
                         <br><br>
                         So what do YOU think? Are we alone in the universe? Are aliens trying to contact us, or do they want to be left alone? Dig through the data yourself, and let us know what you see.</p>
-      
-                </div>  
-        </div>
+                </div>
+             </div>  
+            </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3">
                     <form>
                         <p>Filter Search</p>
+                        <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button> 
                         <ul class="list-group">
                             <li class="list-group-item">
                                 <label for="date">Enter Date</label>
                                 <input type="text" placeholder="1/10/2010" id="datetime" />
-                            </li>
-                            <li class="list-group-item">
-                                <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
                             </li>
                         </ul>
                       </form>
@@ -68,10 +66,12 @@
                         </thead>
                         <tbody></tbody>
                       </table>
-      
-                </div>  
-        </div>
+                </div>
+            </div>     
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src="static/js/data.js"></script>
+    <script src="static/js/app.js"></script>
 </body>
 </html>
