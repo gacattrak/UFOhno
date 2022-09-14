@@ -1,27 +1,29 @@
-// from data.js
+// import data from data.js
 const tableData = data;
 
-// get table references
+// Reference the HTML table using d3
 var tbody = d3.select("tbody");
 
 function buildTable(data) {
-  // First, clear out any existing data
-  tbody.html("");
-
-  // Next, loop through each object in the data
-  // and append a row and cells for each value in the row
-  data.forEach((dataRow) => {
-    // Append a row to the table body
-    let row = tbody.append("tr");
-
-    // Loop through each field in the dataRow and add
-    // each value as a table cell (td)
-    Object.values(dataRow).forEach((val) => {
-      let cell = row.append("td");
-      cell.text(val);
+    // First, clear out any existing data
+    tbody.html("");
+  
+    // Next, loop through each object in the data
+    // and append a row and cells for each value in the row
+    data.forEach((dataRow) => {
+      // Append a row to the table body
+      let row = tbody.append("tr");
+  
+      // Loop through each field in the dataRow and add
+      // each value as a table cell (td)
+      Object.values(dataRow).forEach((val) => {
+        let cell = row.append("td");
+        cell.text(val);
+        }
+      );
     });
-  });
-}
+  };
+
 
 // 1. Create a variable to keep track of all the filters as an object.
 let filters = {};
@@ -36,7 +38,7 @@ function updateFilters() {
     //console.log(elementValue);
     
     // 4c. Save the id of the filter that was changed as a variable.
-    let filterId = elementValue.attr("id");
+    let filterId = changedElement.attr("id");
     //console.log(filterId);
   
     // 5. If a filter value was entered then add that filterId and value
@@ -64,7 +66,7 @@ function updateFilters() {
     Object.entries(filters).forEach((key) {
       let userFilter = d3.select("#"+key.property("value"));
       if (userFilter){
-      filteredData = filteredData.filter(row => row[key] === value)};
+      filteredData = filteredData.filter(row => row[key] === userFilter)};
     });
   
     // 10. Finally, rebuild the table using the filtered data
@@ -72,7 +74,7 @@ function updateFilters() {
   }
   
   // 2. Attach an event to listen for changes to each filter
-  d3.selectAll("input").on("change", updateFilters());
+  d3.selectAll("input").on("change", updateFilters);
   //d3.selectAll("#filter-btn").on("click", handleClick);
 
   // Build the table when the page loads
