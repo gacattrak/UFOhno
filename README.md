@@ -10,7 +10,7 @@
 
 The tool below have be used to identify locations with numerous frequent UFO sightings. 
 
-![TruthSite.png](../images/TruthSite.png)
+![TruthSite.png](static/images/TruthSite.png)
 
 #### Design Recommendation - 
 
